@@ -1,0 +1,57 @@
+
+<mat-card>
+  <mat-card-header>
+    <h1 *ngIf="editMode==='editMode'">Edit Form</h1>
+    <h1 *ngIf="editMode==='regMode'">Registration Form</h1>
+  </mat-card-header>
+  <mat-card-content>
+<form [formGroup]="myforms">
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="Name" placeholder="Full Name">
+    </mat-form-field> 
+   
+    <mat-form-field appearance="fill">
+      <mat-label>Mobile</mat-label>
+    <input type="number" formControlName="Mobile" matInput placeholder="0123456789">
+    </mat-form-field>
+    <br>
+    <span *ngIf="myforms.controls.Name.errors && myforms.controls.Name.errors.pattern">*Only char and spaces are allowed</span>
+   
+   
+<br>
+
+    <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+  <input type="email" formControlName="email" matInput placeholder="@xyz.com">
+    </mat-form-field>
+
+
+<mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+  <input type="password" formControlName="Pwd" matInput placeholder="*******">
+</mat-form-field>
+
+
+   <br>
+   <span *ngIf="myforms.controls.email.errors && myforms.controls.email.errors.pattern">*Enter Valid Email</span>
+   <br>
+   <span *ngIf="myforms.controls.Pwd.errors && myforms.controls.Pwd.errors.minlength">*maxLength 8</span> 
+   <br>
+   <span *ngIf="myforms.controls.Pwd.errors && myforms.controls.Pwd.errors.pattern">use alphanumeric values only</span> 
+   <br>
+
+   <button mat-raised-button color="primary" *ngIf="editMode==='regMode'" mat-dialog-close (click)="fun1()">Register</button>
+
+
+    <button mat-raised-button color="primary"  *ngIf="editMode==='editMode'" (click)="fun2()">UpdateUser</button>
+
+   <button type="reset" mat-raised-button color="accent">Reset</button>
+   
+  </form>
+  <br><br>
+  <a (click)="nav()">LogIn here.</a>
+  <H2 *ngIf="error">{{error.errorTitle}}</H2>
+</mat-card-content>
+</mat-card>
+

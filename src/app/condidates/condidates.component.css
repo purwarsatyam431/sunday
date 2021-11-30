@@ -1,0 +1,13 @@
+h1{
+    display: inline;
+  margin: auto;
+}
+table{
+    width: 100%;
+}
+#h11{
+  color: blueviolet;
+  border: 5px double blueviolet;
+  border-radius: 6px;
+  padding: 4px;
+}

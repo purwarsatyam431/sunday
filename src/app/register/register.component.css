@@ -1,0 +1,17 @@
+mat-card{
+    width: fit-content;
+    margin: auto;
+}
+a{
+    color: blue;
+}
+span{
+    color: red;
+    font-weight: bolder;
+}
+h1{
+    color: blueviolet;
+    border: 5px double blueviolet;
+    border-radius: 6px;
+    padding: 4px;
+}

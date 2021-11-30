@@ -1,0 +1,35 @@
+<div class="main">
+
+
+
+    <div class="Container">
+      <img src="/assets/1.jpg" alt="SSS">
+      
+    
+    </div>
+    
+    <mat-card class="left">
+    <mat-card-content>
+      <form>
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input type="text" name="Username" placeholder="xyz_abcd344" [(ngModel)]="t1"  matInput required>
+          <mat-hint>max char 5*</mat-hint>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input type="password" name="password" placeholder="********"  maxlength="8" [(ngModel)]="t2" matInput required>
+          </mat-form-field>
+          <br>
+          <button mat-raised-button color="warn"(click)=" login()">Login</button><br><br>
+    <a (click)="nav()" >Register here</a>    
+    </form>
+  
+    </mat-card-content>
+  </mat-card>
+  
+  
+  
+  
+  </div>
